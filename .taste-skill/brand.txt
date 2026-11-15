@@ -1,0 +1,23 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<!-- <html lang="en" data-radius="soft">; keep this <style> after the links: layout.css resets --ly-scale -->
+<style>
+:root {
+  --p-bg: #f6f2eb; --p-surface: #ece5d8; --p-ink: #1d1b18; --p-muted: #67645f;
+  --p-accent: #86652a; --p-accent-ink: #f6f2eb; --p-action: #86652a; --p-action-ink: #f6f2eb;
+  --p-inv-bg: #1d1b18; --p-inv-surface: #292724; --p-inv-ink: #f6f2eb; --p-inv-muted: #9b9893;
+  --p-inv-accent: #86652a; --p-inv-accent-ink: #f6f2eb; --p-inv-action: #86652a; --p-inv-action-ink: #f6f2eb;
+  --font-display: "Hanken Grotesk", system-ui, sans-serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.038em;
+}
+</style>

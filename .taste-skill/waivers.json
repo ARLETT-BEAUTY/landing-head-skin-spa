@@ -1,0 +1,4 @@
+[
+  {"check": "no-visual", "target": "section#packs", "reason": "The packs section is the price list; sections.md allows a price list without a picture, and its neighbours both carry photographs."},
+  {"check": "copy-headings", "target": "li.mo-pc__step", "reason": "The page is in Spanish; headings name the session's parts and sections (Masaje, Packs y precios, Preguntas), which the English noun list cannot read."}
+]

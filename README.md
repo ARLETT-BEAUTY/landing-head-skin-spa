@@ -3,9 +3,10 @@
 Landing de una sola página (sin menú) para el servicio de head spa japonés, con los tres packs y sus enlaces de pago de Stripe.
 
 - **Stack:** Next.js 16 con exportación estática (`output: 'export'`). `npm run build` genera la web completa en `out/`.
-- **Contenido:** todo está en `app/page.tsx`. Los packs (nombre, duración, precio, lista y enlace de Stripe), los pasos y las preguntas son listas al principio del fichero.
-- **Diseño:** `app/globals.css` (negro y dorado, Cormorant Garamond + Jost). Efectos de scroll y barra de compra en móvil en `app/Effects.tsx`.
-- **Fotos:** `public/img`. Todas las fotos actuales son provisionales (Wikimedia Commons, créditos en `public/credits.html`) hasta tener las del centro.
+- **Diseño:** recreación del handoff de Claude Design (opción 8a, móvil 390 px). En escritorio, columna centrada de 480 px hasta tener diseño propio.
+- **Contenido:** rituales (nombre, duración, precio, qué incluye, foto y enlace de Stripe), preguntas frecuentes y contacto en `lib/rituales.ts`. La página está en `app/page.tsx`.
+- **Estilos:** `app/globals.css` (tokens del diseño, Marcellus + Cormorant Garamond + Hanken Grotesk). Animaciones de scroll en `components/Effects.tsx`.
+- **Fotos:** `public/img`. Las fotos `hs-*.webp` son provisionales (baja resolución) hasta tener las del centro.
 
 ## Desarrollo
 
@@ -27,7 +28,7 @@ npm run build      # genera out/
 5. Espera a que Vercel marque el dominio como válido (minutos, a veces hasta unas horas). El certificado HTTPS lo pone Vercel solo.
 6. Cuando esté activo, descomenta `metadataBase` en `app/layout.tsx` con la URL final.
 
-## Pendiente de confirmar (ver mensaje en el hilo)
+## Pendiente de confirmar
 
 - Contenido de cada pack (sacado del mockup) y qué pasa después del pago (la respuesta "¿Cómo elijo el día?" es provisional, marcada como PROVISIONAL en `app/page.tsx`).
 - Fotos reales de la cabina, del lavado y del masaje.

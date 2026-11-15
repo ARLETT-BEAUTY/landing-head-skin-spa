@@ -1,26 +1,21 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Jost } from 'next/font/google';
+import { Cormorant_Garamond, Hanken_Grotesk, Marcellus } from 'next/font/google';
 import './globals.css';
 
-const display = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-  display: 'swap',
-});
-const text = Jost({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-text', display: 'swap' });
+const marcellus = Marcellus({ subsets: ['latin'], weight: '400', variable: '--font-title', display: 'swap' });
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: '500', variable: '--font-serif', display: 'swap' });
+const hanken = Hanken_Grotesk({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-text', display: 'swap' });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL('https://headspa.TU-DOMINIO'),  // añadir cuando el subdominio esté activo
-  title: 'Head spa japonés · Arlett Beauty & Health',
+  // metadataBase: new URL('https://SUBDOMINIO.TU-DOMINIO'),  // añadir cuando el subdominio esté activo
+  title: 'Skin & Head Japanese Spa | Arlett Beauty & Health',
   description:
-    'Ritual japonés de cabello y piel: limpieza profunda del cuero cabelludo, masaje y cuidado facial. Tres experiencias de 60 a 120 minutos, desde 89 €.',
+    'Un ritual de agua, masaje y cuidado de piel y cabello. Tres rituales de 60 a 120 minutos en Arlett Beauty & Health, desde 89 €.',
   icons: { icon: '/favicon.png' },
   openGraph: {
     type: 'website',
-    title: 'Head spa japonés en Arlett Beauty & Health',
-    description: 'Tres experiencias Skin & Head de 60 a 120 minutos, desde 89 €.',
+    title: 'Skin & Head Japanese Spa | Arlett Beauty & Health',
+    description: 'Tres rituales de agua, masaje y cuidado de piel y cabello. De 60 a 120 minutos, desde 89 €.',
     images: ['/share.jpg'],
   },
   twitter: { card: 'summary_large_image' },
@@ -30,12 +25,16 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  themeColor: '#070605',
+  themeColor: '#17120f',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${display.variable} ${text.variable}`}>
+    <html lang="es" className={`${marcellus.variable} ${cormorant.variable} ${hanken.variable}`}>
+      <head>
+        {/* Activa las animaciones solo si hay JS, para que el contenido nunca quede oculto */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,9 +1,7 @@
 node_modules
 .next
 out
-.taste-skill/chrome-*
-shots
 next-env.d.ts
 *.tsbuildinfo
 .DS_Store
-capturas
+shots

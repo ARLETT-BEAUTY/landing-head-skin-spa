@@ -95,6 +95,8 @@ em { font-style: normal; color: var(--gold); }
 @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.05); } }
 @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 .intro { animation: rise 1000ms var(--ease) both; animation-delay: calc(150ms + var(--i, 0) * 130ms); }
+/* Con JS, la entrada del hero se repite cada vez que vuelve a verse */
+.js .hero:not(.is-in) .intro { animation: none; opacity: 0; }
 
 /* ---------- Encabezados de sección ---------- */
 .sec-head { padding: 0 20px 18px; }
@@ -111,7 +113,7 @@ em { font-style: normal; color: var(--gold); }
 }
 .carousel::-webkit-scrollbar { display: none; }
 .c-card {
-  flex: none; width: 236px; scroll-snap-align: center; text-decoration: none;
+  flex: none; width: 236px; scroll-snap-align: center;
   background: var(--surface); border-radius: 26px; padding: 10px 10px 18px;
   display: flex; flex-direction: column; gap: 14px;
 }
@@ -119,6 +121,7 @@ em { font-style: normal; color: var(--gold); }
 .c-name { font-family: var(--title); font-size: 27px; line-height: 1.1; }
 .c-meta { display: flex; justify-content: space-between; align-items: baseline; font-size: 16px; }
 .c-price { font-weight: 500; }
+.btn-card { justify-content: center; height: 44px; margin-top: 6px; }
 
 /* ---------- 3 · Frase ---------- */
 .phrase {
@@ -186,5 +189,5 @@ em { font-style: normal; color: var(--gold); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js [data-reveal], .js .detail-list .d-card, .js [data-blur] span { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .js [data-reveal], .js .detail-list .d-card, .js [data-blur] span, .js .hero .intro { opacity: 1 !important; transform: none !important; filter: none !important; }
 }

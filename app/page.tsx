@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="page">
       {/* 1 · Hero */}
-      <section className="hero">
+      <section className="hero" data-replay>
         <div className="hero-photo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/img/hs-hero.webp" alt="Ritual Skin & Head Spa en camilla" fetchPriority="high" />
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
         <div className="carousel" data-reveal>
           {rituales.map((r) => (
-            <a key={r.id} href={`#${r.id}`} className="c-card">
+            <div key={r.id} className="c-card">
               <div className="photo" style={{ height: 250 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={r.foto} alt={`Ritual ${r.nombre}`} loading="lazy" />
@@ -81,8 +81,15 @@ export default function Home() {
                   <span className="gold">{r.duracion}</span>
                   <span className="c-price">{r.precio}</span>
                 </div>
+                <a
+                  href={r.urlPago}
+                  className={`btn btn-sm btn-card ${r.destacado ? 'btn-solid' : 'btn-line'}`}
+                  aria-label={`Reservar ${r.nombre}, ${r.duracion}, ${r.precio}`}
+                >
+                  Reservar
+                </a>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>

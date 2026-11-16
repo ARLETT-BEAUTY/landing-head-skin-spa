@@ -30,7 +30,7 @@ npm run build      # genera out/
 
 ## Enlaces directos de pago
 
-`vercel.json` redirige a Stripe (si cambia un enlace de pago, actualizarlo ahí y en `lib/rituales.ts`):
+Páginas estáticas (`app/[pack]` y `app/reservar/[pack]`) con título, descripción e imagen de Arlett para la vista previa al compartir, que llevan al instante al pago de Stripe. Salen de `lib/rituales.ts`:
 
 - `/esencial` y `/reservar/esencial`
 - `/delicatesse` y `/reservar/delicatesse`

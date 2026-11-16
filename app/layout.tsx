@@ -7,16 +7,20 @@ const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: '500', variab
 const hanken = Hanken_Grotesk({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-text', display: 'swap' });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL('https://SUBDOMINIO.TU-DOMINIO'),  // añadir cuando el subdominio esté activo
+  metadataBase: new URL('https://spa.arlettbeauty.es'),
   title: 'Skin & Head Japanese Spa | Arlett Beauty & Health',
   description:
     'Un ritual de agua, masaje y cuidado de piel y cabello. Tres rituales de 60 a 120 minutos en Arlett Beauty & Health, desde 89 €.',
   icons: { icon: '/favicon.png' },
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
+    url: '/',
+    siteName: 'Arlett Beauty & Health',
+    locale: 'es_ES',
     title: 'Skin & Head Japanese Spa | Arlett Beauty & Health',
     description: 'Tres rituales de agua, masaje y cuidado de piel y cabello. De 60 a 120 minutos, desde 89 €.',
-    images: ['/share.jpg'],
+    images: [{ url: '/share.jpg', width: 1200, height: 628, alt: 'Skin & Head Japanese Spa en Arlett Beauty & Health' }],
   },
   twitter: { card: 'summary_large_image' },
 };

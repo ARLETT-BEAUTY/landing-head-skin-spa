@@ -28,6 +28,14 @@ npm run build      # genera out/
 5. Espera a que Vercel marque el dominio como válido (minutos, a veces hasta unas horas). El certificado HTTPS lo pone Vercel solo.
 6. Cuando esté activo, descomenta `metadataBase` en `app/layout.tsx` con la URL final.
 
+## Enlaces directos de pago
+
+`vercel.json` redirige a Stripe (si cambia un enlace de pago, actualizarlo ahí y en `lib/rituales.ts`):
+
+- `/esencial` y `/reservar/esencial`
+- `/delicatesse` y `/reservar/delicatesse`
+- `/bloom` y `/reservar/bloom`
+
 ## Pendiente de confirmar
 
 - Contenido de cada pack (sacado del mockup) y qué pasa después del pago (la respuesta "¿Cómo elijo el día?" es provisional, marcada como PROVISIONAL en `app/page.tsx`).

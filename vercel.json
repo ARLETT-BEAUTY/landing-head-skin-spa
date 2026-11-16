@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/esencial",
+      "destination": "https://buy.stripe.com/cNieVd2j75xw6eH5m01Jm00",
+      "permanent": false
+    },
+    {
+      "source": "/delicatesse",
+      "destination": "https://buy.stripe.com/aFa9AT6zn4ts1Yr01G1Jm02",
+      "permanent": false
+    },
+    {
+      "source": "/bloom",
+      "destination": "https://buy.stripe.com/eVqeVd8Hv4ts46z8yc1Jm01",
+      "permanent": false
+    },
+    {
+      "source": "/reservar/esencial",
+      "destination": "https://buy.stripe.com/cNieVd2j75xw6eH5m01Jm00",
+      "permanent": false
+    },
+    {
+      "source": "/reservar/delicatesse",
+      "destination": "https://buy.stripe.com/aFa9AT6zn4ts1Yr01G1Jm02",
+      "permanent": false
+    },
+    {
+      "source": "/reservar/bloom",
+      "destination": "https://buy.stripe.com/eVqeVd8Hv4ts46z8yc1Jm01",
+      "permanent": false
+    }
+  ]
+}

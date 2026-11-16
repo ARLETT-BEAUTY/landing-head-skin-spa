@@ -178,13 +178,15 @@ em { font-style: normal; color: var(--gold); }
 
 /* ---------- Animaciones de scroll (solo con JS) ---------- */
 .js [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 1000ms var(--ease), transform 1000ms var(--ease); }
+.js [data-reveal].from-top:not(.is-in) { transform: translateY(-40px); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
 /* En detalle: las tres tarjetas entran juntas, escalonadas 160ms */
 .js .detail-list[data-reveal] { opacity: 1; transform: none; }
 .js .detail-list .d-card { opacity: 0; transform: translateY(40px); transition: opacity 1000ms var(--ease), transform 1000ms var(--ease); transition-delay: calc(var(--i, 0) * 160ms); }
+.js .detail-list.from-top:not(.is-in) .d-card { transform: translateY(-40px); transition-delay: calc((2 - var(--i, 0)) * 160ms); }
 .js .detail-list.is-in .d-card { opacity: 1; transform: none; }
-.js [data-blur] span { filter: blur(14px); opacity: 0.08; transition: filter 1000ms ease-out, opacity 1000ms ease-out; transition-delay: calc(200ms + var(--i, 0) * 80ms); }
-.js [data-blur].is-in span { filter: none; opacity: 1; }
+/* Frase: --p (0 a 1) lo marca el scroll en Effects.tsx, palabra a palabra */
+.js [data-blur] span { filter: blur(calc((1 - var(--p, 0)) * 14px)); opacity: calc(0.08 + var(--p, 0) * 0.92); will-change: filter, opacity; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
